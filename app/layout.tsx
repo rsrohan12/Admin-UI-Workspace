@@ -7,8 +7,8 @@ import toast, { Toaster } from 'react-hot-toast'
 export const metadata: Metadata = {
     title: {
         
-        template: '%s | Grabware',
-        default: 'Grabware',
+        template: '%s | Zabware',
+        default: 'Zabware',
     },
 };
 const nunito = Nunito({
