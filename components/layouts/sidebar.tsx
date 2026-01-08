@@ -133,7 +133,7 @@ const Sidebar = () => {
             <img
               className="ml-[5px] h-10 w-10 flex-none"
               src="/grabware_logo.png"
-              alt="grabware"
+              alt="zrabware"
             />
 
             <button
@@ -383,8 +383,8 @@ export default Sidebar;
 //           <div className="flex items-center justify-between px-4 py-3 bg-cyan-700">
 //             <img
 //               className="ml-[5px] h-10 w-10 flex-none"
-//               src="/grabware_logo.png"
-//               alt="grabware"
+//               src="/zabware_logo.png"
+//               alt="zabware"
 //             />
 
 //             <button
