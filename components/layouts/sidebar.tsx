@@ -106,14 +106,6 @@ const Sidebar = () => {
       items: [],
       heading: '',
     },
-
-    {
-      name: t('GIS Reports'),
-      Icon: <IconUser />,
-      route: '/pmidc',
-      items: [],
-      heading: '',
-    },
   ];
 
   const [isCollapsed, setIsCollapsed] = useState(false);
