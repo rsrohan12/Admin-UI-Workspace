@@ -27,6 +27,7 @@ function App({ children }: PropsWithChildren) {
   const { session } = useSession();
 
   useEffect(() => {
+    
     if (session == null) {
       setRetry(retry + 1);
     }
