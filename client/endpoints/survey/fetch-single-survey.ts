@@ -1,9 +1,9 @@
 import { backendClient } from "@/client/backendClient";
 import { useGlobalLoader } from "@/hooks";
 
-export const GET_REPORT_KEY = "fetch-report";
+export const GET_SURVEY_KEY = "fetch-survey";
 
-export const fetchReport = async (id: string) => {
+export const fetchSurvey = async (id: string) => {
   useGlobalLoader.getState().setShowLoader(true);
   try {
     // const response = await backendClient.get(`/admin/user/admin/${id}`);
