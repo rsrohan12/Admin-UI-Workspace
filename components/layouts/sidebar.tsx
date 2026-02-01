@@ -209,7 +209,7 @@ const Sidebar = () => {
                         <div className="flex items-center gap-3">
                           {menuItem.Icon}
                           <span
-                            className={`text-black dark:text-[#506690] dark:group-hover:text-white-dark ${
+                            className={`text-black dark:text-[#506692] dark:group-hover:text-white-dark ${
                               isCollapsed ? 'hidden' : ''
                             }`}>
                             {menuItem.name}
