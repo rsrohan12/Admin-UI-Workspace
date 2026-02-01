@@ -11,8 +11,8 @@ export type TAddReport = {
 export const addReportRequest = async (payload: TAddReport) => {
   useGlobalLoader.getState().setShowLoader(true);
   try {
-    // const response = await backendClient.post("/admin/user/add", payload);
-    // return response;
+    const response = await backendClient.post("/admin/user/add", payload);
+    return response;
   } catch (error) {
     throw error;
   } finally {
