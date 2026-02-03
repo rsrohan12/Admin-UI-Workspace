@@ -5,8 +5,6 @@ import { useQuery, useMutation } from 'react-query';
 import { ListHeader, Table } from '@/components/common';
 import { LINKS, DEFAULT_QUERY } from '@/constants';
 import {
-  fetchUsers,
-  FETCH_USERS_KEY,
   deleteUserRequest,
 } from '@/client/endpoints';
 import { useGlobalLoader } from '@/hooks';
@@ -14,6 +12,7 @@ import { TQueryData, TUser } from '@/types';
 import { getColumns } from './utils';
 import { showDeleteConfirmation } from '@/utils';
 import toast from 'react-hot-toast';
+import { fetchReportsList, GET_REPORTS_KEY } from '@/client/endpoints/reports/fetch-reports';
 
 const defaultQuery = DEFAULT_QUERY;
 
@@ -23,9 +22,9 @@ export const List = () => {
   const [queryData, setQueryData] = useState<TQueryData>(defaultQuery);
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
-  const { data: users, refetch } = useQuery(
-    [FETCH_USERS_KEY, queryData],
-    () => fetchUsers(queryData),
+  const { data: reports, refetch } = useQuery(
+    [GET_REPORTS_KEY, queryData],
+    () => fetchReportsList(queryData),
     {
       keepPreviousData: false,
       refetchOnWindowFocus: false,
@@ -98,9 +97,9 @@ export const List = () => {
         <div className="table-responsive">
           <div className="datatables">
             <Table
-              records={users && users.data}
+              records={reports && reports.data}
               columns={getColumns({ refetch })}
-              totalRecords={users?.total || 0}
+              totalRecords={reports?.total || 0}
               onPageChange={handlePageChange}
               onSortStatusChange={handleSortChange}
               filters={queryData}

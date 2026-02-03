@@ -15,6 +15,8 @@ import { getColumns } from "./utils";
 import { ListHeader, FilterValues } from "./utils";
 import { showDeleteConfirmation } from "@/utils";
 import toast from "react-hot-toast";
+import { fetchSurveyList } from "@/client/endpoints/survey/fetch-survey";
+import { GET_SURVEY_KEY } from "@/client/endpoints/survey/fetch-single-survey";
 
 const defaultQuery = DEFAULT_QUERY;
 
@@ -24,9 +26,9 @@ export const List = () => {
   const [queryData, setQueryData] = useState<TQueryData>(defaultQuery);
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
-  const { data: users, refetch } = useQuery(
-    [FETCH_USERS_KEY, queryData],
-    () => fetchUsers(queryData),
+  const { data: surveys, refetch } = useQuery(
+    [GET_SURVEY_KEY, queryData],
+    () => fetchSurveyList(queryData),
     {
       keepPreviousData: false,
       refetchOnWindowFocus: false,
@@ -149,9 +151,9 @@ export const List = () => {
         <div className="table-responsive">
           <div className="datatables">
             <Table
-              records={users && users.data}
+              records={surveys && surveys.data}
               columns={getColumns({ refetch })}
-              totalRecords={users?.total || 0}
+              totalRecords={surveys?.total || 0}
               onPageChange={handlePageChange}
               onSortStatusChange={handleSortChange}
               filters={queryData}
