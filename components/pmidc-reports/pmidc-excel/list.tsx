@@ -72,14 +72,14 @@ export const List = () => {
     }
   };
 
-  const trashConfirmation = async () => {
-    const data = await showDeleteConfirmation(
-      'Do you want to move selected users to trash?',
-    );
-    if (data?.isConfirmed) {
-      deleteUser(selectedRows);
-    }
-  };
+  // const trashConfirmation = async () => {
+  //   const data = await showDeleteConfirmation(
+  //     'Do you want to move selected users to trash?',
+  //   );
+  //   if (data?.isConfirmed) {
+  //     deleteUser(selectedRows);
+  //   }
+  // };
 
   return (
     <div>

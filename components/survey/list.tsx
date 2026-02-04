@@ -137,12 +137,12 @@ export const List = () => {
                   </span>
                 )
             )}
-            <button
+            {/* <button
               onClick={() => setFilterValues({})}
               className="ml-auto text-xs text-danger hover:underline"
             >
               Clear All Filters
-            </button>
+            </button> */}
           </div>
         </div>
       )}
