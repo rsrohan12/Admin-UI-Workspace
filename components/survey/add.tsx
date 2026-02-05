@@ -29,6 +29,7 @@ import {
 } from '@/client/endpoints/block-master/add-block';
 import { addBlockSchema } from '@/validations/block-master';
 import { addSurveySchema } from '@/validations/survey';
+import { addSurveyRequest } from '@/client/endpoints/survey/add-survey';
 
 const booleanOptions = Object.values(BooleanValues).map(value => ({
   id: value,
@@ -91,7 +92,7 @@ export const AddForm = () => {
     defaultValues: {},
   });
 
-  const { mutate: addNewBlock } = useMutation(addBlockRequest, {
+  const { mutate: addNewSurvey } = useMutation(addSurveyRequest, {
     onSuccess: res => {
       router.push(LINKS.block_master.route);
       // toast.success(res.data.message);
