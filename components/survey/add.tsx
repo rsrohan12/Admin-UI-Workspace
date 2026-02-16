@@ -50,35 +50,35 @@ export const AddForm = () => {
   const [isValidPassword, setIsValidPassword] = useState(false);
   const [isEditMode, setIsEditMode] = useState(true);
 
-  // const { data: roles } = useQuery(
-  //   [FETCH_ROLE_KEY],
-  //   () =>
-  //     fetchRoles({
-  //       size: 1000,
-  //       skip: 0,
-  //       search: "",
-  //       sorting: 'id DESC'
-  //     }),
-  //   {
-  //     keepPreviousData: false,
-  //     refetchOnWindowFocus: false,
-  //     retry: 0,
-  //     refetchOnMount: false,
-  //   }
-  // );
+  const { data: roles } = useQuery(
+    [FETCH_ROLE_KEY],
+    () =>
+      fetchRoles({
+        size: 1000,
+        skip: 0,
+        search: "",
+        sorting: 'id DESC'
+      }),
+    {
+      keepPreviousData: false,
+      refetchOnWindowFocus: false,
+      retry: 0,
+      refetchOnMount: false,
+    }
+  );
 
-  // useEffect(() => {
-  //   if (roles && roles?.data?.length) {
-  //     let roleValues: DefaultValue[] = [];
-  //     roles?.data?.map((role) => {
-  //       roleValues.push({
-  //         id: role.id?.toString(),
-  //         name: role.name!,
-  //       });
-  //     });
-  //     setRoleOptions(roleValues);
-  //   }
-  // }, [roles]);
+  useEffect(() => {
+    if (roles && roles?.data?.length) {
+      let roleValues: DefaultValue[] = [];
+      roles?.data?.map((role) => {
+        roleValues.push({
+          id: role.id?.toString(),
+          name: role.name!,
+        });
+      });
+      setRoleOptions(roleValues);
+    }
+  }, [roles]);
 
   const {
     register,
