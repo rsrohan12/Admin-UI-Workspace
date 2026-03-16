@@ -6,17 +6,17 @@ export type DefaultValue = {
   status?:string,
 };
 
-export type DefaultNumberValue = {
-  id: number;
-  name: string;
-  value?:string;
-  position_id?:number,
-  recurrence_no?:string | undefined,
-};
-export type DefaultReportValue = {
-  id: string;
-  name: string;
-};
+// export type DefaultNumberValue = {
+//   id: number;
+//   name: string;
+//   value?:string;
+//   position_id?:number,
+//   recurrence_no?:string | undefined,
+// };
+// export type DefaultReportValue = {
+//   id: string;
+//   name: string;
+// };
 
 export type TQueryData = {
   size: number;
